@@ -1,0 +1,46 @@
+C51 COMPILER V9.02   LED02                                                                 12/09/2015 22:27:36 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE LED02
+OBJECT MODULE PLACED IN LED02.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE LED02.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          sbit LED_0 = P0 ^ 0;
+   4          sbit LED_1 = P0 ^ 1;
+   5          sbit LED_2 = P0 ^ 2;
+   6          sbit ADDR0 = P1 ^ 0;
+   7          sbit ADDR1 = P1 ^ 1;
+   8          sbit ADDR2 = P1 ^ 2;
+   9          sbit ADDR3 = P1 ^ 3;
+  10          sbit ENLED = P1 ^ 4;
+  11          
+  12          void main()
+  13          {
+  14   1              ENLED = 0;
+  15   1              ADDR3 = 1;
+  16   1              ADDR2 = 1;
+  17   1              ADDR1 = 1;
+  18   1              ADDR0 = 0;
+  19   1              LED_0 = 0;
+  20   1              LED_1 = 0;
+  21   1              LED_2 = 0;
+  22   1              while(1);
+  23   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     18    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
