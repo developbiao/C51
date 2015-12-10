@@ -1,0 +1,205 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/10/2015  22:37:19  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE STARTUP.obj, lesson03.obj, test01.obj TO lesson3 RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  lesson03.obj (LESSON03)
+  test01.obj (TEST01)
+
+
+LINK MAP OF MODULE:  lesson3 (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     004BH     UNIT         ?PR?MAIN?TEST01
+            CODE    004EH     002FH     UNIT         ?PR?MAIN?LESSON03
+            CODE    007DH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   lesson3 (?C_STARTUP)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?LESSON03
+
+
+
+IGNORED SYMBOLS:
+   MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  lesson3 (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:007DH         SEGMENT       ?C_C51STARTUP
+  I:0008H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/10/2015  22:37:19  PAGE 2
+
+
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0080H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:007DH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:007DH         LINE#         133
+  C:007FH         LINE#         134
+  C:0080H         LINE#         135
+  C:0081H         LINE#         136
+  C:0083H         LINE#         185
+  C:0086H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        LESSON03
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:004EH         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:0090H.0       PUBLIC        ADDR0
+  B:0090H.1       PUBLIC        ADDR1
+  B:0090H.2       PUBLIC        ADDR2
+  B:0090H.3       PUBLIC        ADDR3
+  B:0080H.0       PUBLIC        LED
+  D:00C8H         PUBLIC        T2CON
+  B:0090H.4       PUBLIC        ENLED
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:004EH         LINE#         15
+  C:004EH         LINE#         16
+  C:004EH         LINE#         18
+  C:004EH         LINE#         21
+  C:0050H         LINE#         22
+  C:0052H         LINE#         23
+  C:0054H         LINE#         24
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/10/2015  22:37:19  PAGE 3
+
+
+  C:0056H         LINE#         25
+  C:0058H         LINE#         27
+  C:0058H         LINE#         28
+  C:0058H         LINE#         29
+  C:005AH         LINE#         30
+  C:0068H         LINE#         31
+  C:006AH         LINE#         32
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        LESSON03
+
+  -------         MODULE        TEST01
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:0003H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  B:0090H.0       PUBLIC        ADDR0
+  B:0090H.2       PUBLIC        ADDR2
+  B:0090H.3       PUBLIC        ADDR3
+  B:0080H.0       PUBLIC        LED_0
+  B:0080H.1       PUBLIC        LED_1
+  B:0080H.2       PUBLIC        LED_2
+  D:00C8H         PUBLIC        T2CON
+  B:0080H.3       PUBLIC        LED_3
+  B:0080H.4       PUBLIC        LED_4
+  B:0090H.4       PUBLIC        ENLED
+  B:0080H.5       PUBLIC        LED_5
+  B:0080H.6       PUBLIC        LED_6
+  B:0080H.7       PUBLIC        LED_7
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0003H         LINE#         18
+  C:0003H         LINE#         19
+  C:0003H         LINE#         20
+  C:0003H         LINE#         21
+  C:0005H         LINE#         22
+  C:0007H         LINE#         23
+  C:0009H         LINE#         24
+  C:000BH         LINE#         25
+  C:000DH         LINE#         27
+  C:000DH         LINE#         28
+  C:000DH         LINE#         29
+  C:000FH         LINE#         30
+  C:0011H         LINE#         31
+  C:0013H         LINE#         32
+  C:0015H         LINE#         33
+  C:0017H         LINE#         34
+  C:0019H         LINE#         35
+  C:001BH         LINE#         36
+  C:001DH         LINE#         37
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/10/2015  22:37:19  PAGE 4
+
+
+  C:002BH         LINE#         38
+  C:002DH         LINE#         39
+  C:002FH         LINE#         40
+  C:0031H         LINE#         41
+  C:0033H         LINE#         42
+  C:0035H         LINE#         43
+  C:0037H         LINE#         44
+  C:0039H         LINE#         45
+  C:003BH         LINE#         46
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TEST01
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  test01.obj (TEST01)
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?TEST01
+
+Program Size: data=9.0 xdata=0 code=137
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  1 ERROR(S)

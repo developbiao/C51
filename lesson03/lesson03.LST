@@ -1,0 +1,59 @@
+C51 COMPILER V9.02   LESSON03                                                              12/10/2015 22:34:46 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE LESSON03
+OBJECT MODULE PLACED IN lesson03.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE lesson03.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*
+   2          @Descrie: 74HC138原理学习
+   3          @Author:GongBiao
+   4          @Date:2015/12/10
+   5          */
+   6          #include <reg52.h>
+   7          
+   8          sbit LED = P0^0;
+   9          sbit ADDR0 = P1^0;
+  10          sbit ADDR1 = P1^1;
+  11          sbit ADDR2 = P1^2;
+  12          sbit ADDR3 = P1^3;
+  13          sbit ENLED = P1^4;
+  14          
+  15          void main()
+  16          {
+  17   1              //以下为声明语句部分
+  18   1              unsigned int i = 0; //定义一个无符号整形变量i,并赋初始值0
+  19   1      
+  20   1              //以下为执行语句部分
+  21   1              ENLED = 0; // U3、U4两片74HC138总使能     电极+
+  22   1              ADDR3 = 1; //使U3使能正常输出                      电极-
+  23   1              ADDR2 = 1;       //经U3的Y6输出开启三极管Q16
+  24   1              ADDR1 = 1;
+  25   1              ADDR0 = 0;                                                         //电极正
+  26   1              
+  27   1              while(1)
+  28   1              {
+  29   2                      LED = 0;                          //点亮小灯
+  30   2                      for(i=0; i<30000; i++);   //延时一段时间
+  31   2                      LED = 1;                                //熄灭小灯
+  32   2                      for(i=0; i<30000; i++);   //延时一段时间
+  33   2              }
+  34   1      }
+  35          
+  36          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     47    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
