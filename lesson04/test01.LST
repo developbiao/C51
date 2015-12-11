@@ -1,0 +1,49 @@
+C51 COMPILER V9.02   TEST01                                                                12/11/2015 21:34:45 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE TEST01
+OBJECT MODULE PLACED IN test01.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE test01.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          
+   3          sbit ADDR0 = P1^0;
+   4          sbit ADDR1 = P1^1;
+   5          sbit ADDR2 = P1^2;
+   6          sbit ADDR3 = P1^3;
+   7          sbit ENLED = P1^4;
+   8          sbit LED = P0^0;
+   9          
+  10          void main()
+  11          {
+  12   1              unsigned int i = 0;
+  13   1              ENLED = 0;
+  14   1              ADDR3 = 1;
+  15   1              ADDR2 = 1;
+  16   1              ADDR1 = 1;
+  17   1              ADDR0 = 0;
+  18   1      
+  19   1              while(1)
+  20   1              {
+  21   2                  P0 = 0xFB;
+  22   2                      for(i=0; i<30000; i++);
+  23   2                  P0 = 0xFF;
+  24   2                      for(i=0; i<30000; i++);
+  25   2              }
+  26   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     49    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

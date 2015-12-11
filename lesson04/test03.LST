@@ -1,0 +1,75 @@
+C51 COMPILER V9.02   TEST03                                                                12/11/2015 22:29:17 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE TEST03
+OBJECT MODULE PLACED IN test03.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE test03.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*
+   2          @Descrie:”““∆µ„¡¡LED
+   3          @Author:GongBiao
+   4          @Date:2015/12/11
+   5          */
+   6          #include <reg52.h>
+   7          
+   8          sbit ADDR0 = P1 ^ 0;
+   9          sbit ADDR1 = P1 ^ 1;
+  10          sbit ADDR2 = P1 ^ 2;
+  11          sbit ADDR3 = P1 ^ 3;
+  12          sbit ENLED = P1 ^ 4;
+  13          
+  14          void main()
+  15          {
+  16   1       unsigned int i = 0;
+  17   1       unsigned char count = 0;
+  18   1      
+  19   1         ENLED = 0;
+  20   1         ADDR3 = 1;
+  21   1         ADDR2 = 1;
+  22   1         ADDR1 = 1;
+  23   1         ADDR0 = 0;
+  24   1      
+  25   1         while(1)
+  26   1         {    
+  27   2                      if(count <= 0)
+  28   2                      {
+  29   3                              P0 = ~(0x80 >> count);
+  30   3                              count++;
+  31   3                      }
+  32   2      
+  33   2                      else if(count >= 8)
+  34   2                      {
+  35   3                              P0 = ~(0x01 << count);
+  36   3                              count--;
+  37   3                      }
+  38   2                      else
+  39   2                      {
+  40   3                              P0 = ~(0x80 >> count);
+  41   3                              count++;
+  42   3                      }
+  43   2      
+  44   2      
+  45   2                      for(i=0; i<30000; i++);         
+  46   2      
+  47   2         }
+  48   1      
+  49   1        
+  50   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     90    ----
+   CONSTANT SIZE    =   ----    ----
+C51 COMPILER V9.02   TEST03                                                                12/11/2015 22:29:17 PAGE 2   
+
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
