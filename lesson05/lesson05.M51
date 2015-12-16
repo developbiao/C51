@@ -1,19 +1,19 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        12/14/2015  22:38:55  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        12/16/2015  22:03:35  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-D:\KEIL\C51\BIN\BL51.EXE pricetice_02.obj TO lesson05 RAMSIZE (256)
+D:\KEIL\C51\BIN\BL51.EXE practice05.obj TO lesson05 RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
 
 
 INPUT MODULES INCLUDED:
-  pricetice_02.obj (PRICETICE_02)
+  practice05.obj (PRACTICE05)
   D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
 
 
-LINK MAP OF MODULE:  lesson05 (PRICETICE_02)
+LINK MAP OF MODULE:  lesson05 (PRACTICE05)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -25,59 +25,97 @@ LINK MAP OF MODULE:  lesson05 (PRICETICE_02)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     000FH     UNIT         ?PR?MAIN?PRICETICE_02
-            CODE    0012H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     003CH     UNIT         ?PR?MAIN?PRACTICE05
+            CODE    003FH     0010H     UNIT         ?CO?PRACTICE05
+            CODE    004FH     000CH     UNIT         ?C_C51STARTUP
 
 
 
-OVERLAY MAP OF MODULE:   lesson05 (PRICETICE_02)
+OVERLAY MAP OF MODULE:   lesson05 (PRACTICE05)
 
 
 SEGMENT
   +--> CALLED SEGMENT
 ---------------------
 ?C_C51STARTUP
-  +--> ?PR?MAIN?PRICETICE_02
+  +--> ?PR?MAIN?PRACTICE05
+
+?PR?MAIN?PRACTICE05
+  +--> ?CO?PRACTICE05
 
 
 
-SYMBOL TABLE OF MODULE:  lesson05 (PRICETICE_02)
+SYMBOL TABLE OF MODULE:  lesson05 (PRACTICE05)
 
   VALUE           TYPE          NAME
   ----------------------------------
 
-  -------         MODULE        PRICETICE_02
+  -------         MODULE        PRACTICE05
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
   D:00B0H         PUBLIC        P3
   D:00A8H         PUBLIC        IE
+  C:003FH         PUBLIC        LedChar
   D:00B8H         PUBLIC        IP
   C:0003H         PUBLIC        main
+BL51 BANKED LINKER/LOCATER V6.22                                                      12/16/2015  22:03:35  PAGE 2
+
+
   D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
   D:0088H         PUBLIC        TCON
+  B:0088H.5       PUBLIC        TF0
   B:0090H.0       PUBLIC        ADDR0
+  D:008CH         PUBLIC        TH0
   B:0090H.1       PUBLIC        ADDR1
   B:0090H.2       PUBLIC        ADDR2
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/14/2015  22:38:55  PAGE 2
-
-
   B:0090H.3       PUBLIC        ADDR3
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
   D:00C8H         PUBLIC        T2CON
   B:0090H.4       PUBLIC        ENLED
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
-  C:0003H         LINE#         9
-  C:0003H         LINE#         10
-  C:0003H         LINE#         11
-  C:0005H         LINE#         12
-  C:0007H         LINE#         13
-  C:0009H         LINE#         14
-  C:000BH         LINE#         15
-  C:000DH         LINE#         17
-  C:0010H         LINE#         19
+  -------         DO            
+  D:0007H         SYMBOL        count
+  D:0006H         SYMBOL        sec
+  -------         ENDDO         
+  C:0003H         LINE#         20
+  C:0003H         LINE#         21
+  C:0003H         LINE#         22
+  C:0005H         LINE#         23
+  C:0006H         LINE#         25
+  C:0008H         LINE#         26
+  C:000AH         LINE#         27
+  C:000CH         LINE#         28
+  C:000EH         LINE#         29
+  C:0010H         LINE#         30
+  C:0013H         LINE#         31
+  C:0016H         LINE#         32
+  C:0018H         LINE#         33
+  C:001AH         LINE#         35
+  C:001AH         LINE#         36
+  C:001AH         LINE#         37
+  C:001DH         LINE#         38
+  C:001DH         LINE#         39
+  C:001FH         LINE#         40
+  C:0022H         LINE#         41
+  C:0025H         LINE#         42
+  C:0026H         LINE#         44
+  C:002CH         LINE#         45
+  C:002CH         LINE#         46
+  C:002EH         LINE#         47
+  C:0035H         LINE#         48
+  C:0036H         LINE#         49
+  C:003BH         LINE#         50
+  C:003BH         LINE#         51
+  C:003DH         LINE#         52
+  C:003DH         LINE#         53
+  C:003DH         LINE#         54
+  C:003DH         LINE#         55
   -------         ENDPROC       MAIN
-  -------         ENDMOD        PRICETICE_02
+  -------         ENDMOD        PRACTICE05
 
-Program Size: data=9.0 xdata=0 code=30
+Program Size: data=9.0 xdata=0 code=91
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
