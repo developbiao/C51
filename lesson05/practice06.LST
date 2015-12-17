@@ -1,0 +1,73 @@
+C51 COMPILER V9.02   PRACTICE06                                                            12/17/2015 20:50:26 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE PRACTICE06
+OBJECT MODULE PLACED IN practice06.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE practice06.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /*
+   2          @Describe: 左右往复移动点亮流水灯效果
+   3          @Student:GongBiao
+   4          @Date:2015/12/17
+   5          */
+   6          
+   7          #include <reg52.h>
+   8          
+   9          sbit ADDR0 = P1 ^ 0;
+  10          sbit ADDR1 = P1 ^ 1;
+  11          sbit ADDR2 = P1 ^ 2;
+  12          sbit ADDR3 = P1 ^ 3;
+  13          sbit ENLED = P1 ^ 4;
+  14          
+  15          void main(void)
+  16          {
+  17   1              unsigned int i = 0; //定义循环变量i，用于软件延时
+  18   1              unsigned int dir = 0; //定义移位方向变量dir
+  19   1              unsigned int shift = 0x01; //定义循环变量shift 初始化值为0x01
+  20   1              ENLED = 0;
+  21   1              ADDR3 = 1;
+  22   1              ADDR2 = 1;
+  23   1              ADDR1 = 1;
+  24   1              ADDR0 = 0;
+  25   1      
+  26   1              while(1)
+  27   1              {
+  28   2                 P0 = ~shift;                                 //P0 等于循环移位变量取反
+  29   2                 for(i=0; i<20000; i++);              //延时
+  30   2                      if(dir == 0)                            //移位方向变量为0时，左移
+  31   2                      {
+  32   3                              shift = shift << 1;             //循环移位变量左移1位
+  33   3                              if(shift == 0x80)               //左移到最左端后，改变移动方式
+  34   3                              {
+  35   4                                      dir = 1;
+  36   4                              }
+  37   3                      }
+  38   2                      else                                            // 移动方向不为0时，右移
+  39   2                      {
+  40   3                              shift = shift >> 1;         //循环移位变量右移1位
+  41   3                              if(shift == 0x01)           //右移到最右端后，改变移动方向
+  42   3                              {
+  43   4                                      dir = 0;
+  44   4                              }
+  45   3                      }               
+  46   2              }
+  47   1      
+  48   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     72    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+C51 COMPILER V9.02   PRACTICE06                                                            12/17/2015 20:50:26 PAGE 2   
+
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
