@@ -1,0 +1,27 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+H:\workspace\C51\lesson06\demo01\LED.uvproj
+Project File Date:  12/23/2015
+
+<h2>Output:</h2>
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling test_led01.c...
+TEST_LED01.C(21): error C202: 'i': undefined identifier
+TEST_LED01.C(23): error C202: 'i': undefined identifier
+Target not created
+Build target 'Target 1'
+compiling test_led01.c...
+linking...
+Program Size: data=9.0 xdata=0 code=62
+"LED" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+assembling STARTUP.A51...
+compiling test_led01.c...
+linking...
+Program Size: data=9.0 xdata=0 code=62
+creating hex file from "LEDTEST"...
+"LEDTEST" - 0 Error(s), 0 Warning(s).

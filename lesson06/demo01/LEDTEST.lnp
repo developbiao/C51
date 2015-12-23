@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"test_led01.obj" 
+TO "LEDTEST" 
+RAMSIZE(256) 
