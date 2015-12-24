@@ -1,0 +1,66 @@
+C51 COMPILER V9.02   TEST_LED03                                                            12/24/2015 22:13:04 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE TEST_LED03
+OBJECT MODULE PLACED IN test_led03.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE test_led03.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include <reg52.h>
+   2          sbit ADDR0 = P1 ^ 0;
+   3          sbit ADDR1 = P1 ^ 1;
+   4          sbit ADDR2 = P1 ^ 2;
+   5          sbit ADDR3 = P1 ^ 3;
+   6          sbit ENLED = P1 ^ 4;
+   7          void main(void)
+   8          {
+   9   1              unsigned int i = 0;         //初始化计数器i
+  10   1              unsigned char shift = 0x01;         // 定义偏移
+  11   1              unsigned char dir = 0;              //定义移动方向
+  12   1      
+  13   1              ENLED = 0;
+  14   1              ADDR3 = 1;
+  15   1              ADDR2 = 1;
+  16   1              ADDR1 = 1;
+  17   1              ADDR0 = 0;
+  18   1      
+  19   1              while(1)
+  20   1              {
+  21   2                      P0 = ~shift;
+  22   2                      for(i=0; i<10000; i++);     //用于软件延时
+  23   2      
+  24   2                      if(dir == 0)
+  25   2                      {
+  26   3                              shift <<= 1;                    //向左偏移
+  27   3                              if(shift == 0x80)
+  28   3                              {
+  29   4                                      dir = 1;
+  30   4                              }
+  31   3                      }
+  32   2                      else
+  33   2                      {
+  34   3                              shift >>= 1;
+  35   3                              if(shift == 0x01)           //向右偏移
+  36   3                              {
+  37   4                                      dir = 0;
+  38   4                              }
+  39   3                      }
+  40   2              }
+  41   1      
+  42   1      
+  43   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     57    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

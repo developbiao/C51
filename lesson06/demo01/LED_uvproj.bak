@@ -344,12 +344,17 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>demo</GroupName>
+          <GroupName>Source Group 1</GroupName>
           <Files>
             <File>
-              <FileName>test_led03.c</FileName>
+              <FileName>STARTUP.A51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\STARTUP.A51</FilePath>
+            </File>
+            <File>
+              <FileName>test_led01.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\test_led03.c</FilePath>
+              <FilePath>.\test_led01.c</FilePath>
             </File>
           </Files>
         </Group>

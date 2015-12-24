@@ -1,4 +1,3 @@
-"STARTUP.obj",
-"test_led01.obj" 
+"test_led03.obj" 
 TO "LEDTEST" 
 RAMSIZE(256) 

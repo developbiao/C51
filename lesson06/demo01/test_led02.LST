@@ -1,0 +1,58 @@
+C51 COMPILER V9.02   TEST_LED02                                                            12/24/2015 21:44:33 PAGE 1   
+
+
+C51 COMPILER V9.02, COMPILATION OF MODULE TEST_LED02
+OBJECT MODULE PLACED IN test_led02.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE test_led02.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          /**
+   2          @Describe:从左向左点亮流水灯
+   3          @Author:GongBiao
+   4          @Date:2015/12/24
+   5          */
+   6          #include <reg52.h>
+   7          
+   8          
+   9          sbit ADDR0 = P1 ^ 0;
+  10          sbit ADDR1 = P1 ^ 1;
+  11          sbit ADDR2 = P1 ^ 2;
+  12          sbit ADDR3 = P1 ^ 3;
+  13          sbit ENLED = P1 ^ 4;
+  14          
+  15          void main()
+  16          {
+  17   1         unsigned int i = 0;
+  18   1         char count = 0;
+  19   1         ENLED = 0;
+  20   1         ADDR3 = 1;
+  21   1         ADDR2 = 1;
+  22   1         ADDR1 = 1;
+  23   1         ADDR0 = 0;
+  24   1         
+  25   1         while(1)
+  26   1         {
+  27   2                      P0 = ~(0x80 >> count);   //逐次右移
+  28   2                      for(i=0; i<30000; i++);  //用于软件延时
+  29   2                      count ++;
+  30   2      
+  31   2                      if(count >= 8)
+  32   2                              count = 0;
+  33   2      
+  34   2         }
+  35   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
