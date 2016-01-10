@@ -347,9 +347,9 @@
           <GroupName>practice</GroupName>
           <Files>
             <File>
-              <FileName>practice05.c</FileName>
+              <FileName>practice06.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\practice05.c</FilePath>
+              <FilePath>.\practice06.c</FilePath>
             </File>
           </Files>
         </Group>

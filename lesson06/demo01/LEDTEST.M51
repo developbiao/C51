@@ -1,19 +1,19 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        12/24/2015  22:13:04  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        01/10/2016  16:07:22  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
-D:\KEIL\C51\BIN\BL51.EXE test_led03.obj TO LEDTEST RAMSIZE (256)
+D:\KEIL\C51\BIN\BL51.EXE test_led04.obj TO LEDTEST RAMSIZE (256)
 
 
 MEMORY MODEL: SMALL
 
 
 INPUT MODULES INCLUDED:
-  test_led03.obj (TEST_LED03)
+  test_led04.obj (TEST_LED04)
   D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
 
 
-LINK MAP OF MODULE:  LEDTEST (TEST_LED03)
+LINK MAP OF MODULE:  LEDTEST (TEST_LED04)
 
 
             TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
@@ -25,28 +25,28 @@ LINK MAP OF MODULE:  LEDTEST (TEST_LED03)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     0039H     UNIT         ?PR?MAIN?TEST_LED03
-            CODE    003CH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     0041H     UNIT         ?PR?MAIN?TEST_LED04
+            CODE    0044H     000CH     UNIT         ?C_C51STARTUP
 
 
 
-OVERLAY MAP OF MODULE:   LEDTEST (TEST_LED03)
+OVERLAY MAP OF MODULE:   LEDTEST (TEST_LED04)
 
 
 SEGMENT
   +--> CALLED SEGMENT
 ---------------------
 ?C_C51STARTUP
-  +--> ?PR?MAIN?TEST_LED03
+  +--> ?PR?MAIN?TEST_LED04
 
 
 
-SYMBOL TABLE OF MODULE:  LEDTEST (TEST_LED03)
+SYMBOL TABLE OF MODULE:  LEDTEST (TEST_LED04)
 
   VALUE           TYPE          NAME
   ----------------------------------
 
-  -------         MODULE        TEST_LED03
+  -------         MODULE        TEST_LED04
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:0080H         PUBLIC        P0
   D:0090H         PUBLIC        P1
@@ -59,7 +59,7 @@ SYMBOL TABLE OF MODULE:  LEDTEST (TEST_LED03)
   B:0090H.0       PUBLIC        ADDR0
   B:0090H.1       PUBLIC        ADDR1
   B:0090H.2       PUBLIC        ADDR2
-BL51 BANKED LINKER/LOCATER V6.22                                                      12/24/2015  22:13:04  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22                                                      01/10/2016  16:07:22  PAGE 2
 
 
   B:0090H.3       PUBLIC        ADDR3
@@ -72,38 +72,38 @@ SYMBOL TABLE OF MODULE:  LEDTEST (TEST_LED03)
   D:0005H         SYMBOL        shift
   D:0004H         SYMBOL        dir
   -------         ENDDO         
-  C:0003H         LINE#         7
-  C:0003H         LINE#         8
-  C:0003H         LINE#         9
-  C:0004H         LINE#         10
-  C:0006H         LINE#         11
-  C:0007H         LINE#         13
-  C:0009H         LINE#         14
-  C:000BH         LINE#         15
-  C:000DH         LINE#         16
-  C:000FH         LINE#         17
-  C:0011H         LINE#         19
-  C:0011H         LINE#         20
-  C:0011H         LINE#         21
-  C:0015H         LINE#         22
-  C:0023H         LINE#         24
-  C:0026H         LINE#         25
-  C:0026H         LINE#         26
-  C:002AH         LINE#         27
-  C:002DH         LINE#         28
-  C:002DH         LINE#         29
-  C:002FH         LINE#         30
-  C:002FH         LINE#         31
-  C:0031H         LINE#         33
-  C:0031H         LINE#         34
-  C:0035H         LINE#         35
-  C:0038H         LINE#         36
-  C:0038H         LINE#         37
-  C:003AH         LINE#         38
-  C:003AH         LINE#         39
-  C:003AH         LINE#         40
+  C:0003H         LINE#         14
+  C:0003H         LINE#         15
+  C:0003H         LINE#         16
+  C:0004H         LINE#         17
+  C:0006H         LINE#         18
+  C:0007H         LINE#         20
+  C:0009H         LINE#         21
+  C:000BH         LINE#         22
+  C:000DH         LINE#         23
+  C:000FH         LINE#         24
+  C:0011H         LINE#         26
+  C:0011H         LINE#         27
+  C:0011H         LINE#         28
+  C:0015H         LINE#         29
+  C:0023H         LINE#         31
+  C:0026H         LINE#         32
+  C:0026H         LINE#         33
+  C:002CH         LINE#         34
+  C:0031H         LINE#         35
+  C:0031H         LINE#         36
+  C:0033H         LINE#         37
+  C:0033H         LINE#         39
+  C:0035H         LINE#         41
+  C:0035H         LINE#         42
+  C:003BH         LINE#         43
+  C:0040H         LINE#         44
+  C:0040H         LINE#         45
+  C:0042H         LINE#         46
+  C:0042H         LINE#         47
+  C:0042H         LINE#         48
   -------         ENDPROC       MAIN
-  -------         ENDMOD        TEST_LED03
+  -------         ENDMOD        TEST_LED04
 
-Program Size: data=9.0 xdata=0 code=72
+Program Size: data=9.0 xdata=0 code=80
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,8 @@
+#51 machine ignore file rule list
+*.swap
+*.OBJ
+*.LST
+*.hex
+*.lnp
+*.M51
+*.plg
