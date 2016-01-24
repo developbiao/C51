@@ -43,7 +43,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>LEDTEST</OutputName>
+          <OutputName>LEDTEST2016</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -347,9 +347,9 @@
           <GroupName>demo</GroupName>
           <Files>
             <File>
-              <FileName>test_led03.c</FileName>
+              <FileName>timer_test02.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\test_led03.c</FilePath>
+              <FilePath>.\timer_test02.c</FilePath>
             </File>
           </Files>
         </Group>
