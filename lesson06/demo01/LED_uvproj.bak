@@ -347,9 +347,9 @@
           <GroupName>demo</GroupName>
           <Files>
             <File>
-              <FileName>timer_test02.c</FileName>
+              <FileName>ledtube02.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\timer_test02.c</FilePath>
+              <FilePath>.\ledtube02.c</FilePath>
             </File>
           </Files>
         </Group>
