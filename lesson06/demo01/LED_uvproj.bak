@@ -347,9 +347,9 @@
           <GroupName>demo</GroupName>
           <Files>
             <File>
-              <FileName>ledtube02.c</FileName>
+              <FileName>ledtube04.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\ledtube02.c</FilePath>
+              <FilePath>.\ledtube04.c</FilePath>
             </File>
           </Files>
         </Group>
